@@ -1,0 +1,684 @@
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    background-color: #000000;
+    background: #0a0a0a;
+    min-height: 100vh;
+    color: #e0e0e0;
+}
+
+.navbar {
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    backdrop-filter: blur(10px);
+    padding: 0.75rem 0;
+}
+
+.navbar-brand {
+    transition: transform 0.2s ease;
+}
+
+.navbar-brand:hover {
+    transform: scale(1.05);
+}
+
+.nav-link {
+    transition: all 0.2s ease;
+    border-radius: 6px;
+    padding: 0.5rem 1rem !important;
+}
+
+.nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.1) !important;
+    transform: translateY(-1px);
+}
+
+.nav-link.active {
+    background-color: rgba(255, 255, 255, 0.2) !important;
+    font-weight: 600;
+}
+
+.navbar.sticky-top {
+    z-index: 1030;
+}
+
+.bg-gradient-primary {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+}
+
+.bg-gradient-dark {
+    background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%) !important;
+}
+
+.bg-gradient-danger {
+    background: linear-gradient(135deg, #dc3545 0%, #c82333 100%) !important;
+}
+
+.bg-gradient-info {
+    background: linear-gradient(135deg, #0dcaf0 0%, #0aa2c0 100%) !important;
+}
+
+.bg-gradient-success {
+    background: linear-gradient(135deg, #198754 0%, #157347 100%) !important;
+}
+
+.bg-gradient-warning {
+    background: linear-gradient(135deg, #ffc107 0%, #ffb300 100%) !important;
+}
+
+.hover-lift {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-lift:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.3) !important;
+}
+
+.chart-card {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.chart-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.4) !important;
+}
+
+.map-container {
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    border: 2px solid #444;
+}
+
+.nav-link.active {
+    font-weight: bold;
+    background-color: rgba(255,255,255,0.2);
+    border-radius: 5px;
+    padding: 5px 10px !important;
+}
+
+.card {
+    box-shadow: 0 4px 6px rgba(0,0,0,0.5);
+    margin-bottom: 1.5rem;
+    border: 1px solid #333;
+    border-radius: 10px;
+    background-color: #1a1a1a;
+    transition: transform 0.2s, box-shadow 0.2s;
+    color: #e0e0e0;
+}
+
+.card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.7);
+    border-color: #555;
+}
+
+.card-body {
+    background-color: #1a1a1a;
+    color: #e0e0e0;
+}
+
+.card-header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+    color: white;
+    font-weight: 600;
+    border-radius: 10px 10px 0 0 !important;
+    border: none;
+}
+
+.card-header.bg-gradient-dark {
+    background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%) !important;
+}
+
+.table-responsive {
+    overflow-y: auto;
+}
+
+.form-select {
+    font-size: 0.9rem;
+    border-radius: 5px;
+    background-color: #2a2a2a;
+    color: #e0e0e0;
+    border: 1px solid #444;
+}
+
+.form-select:focus {
+    background-color: #2a2a2a;
+    color: #e0e0e0;
+    border-color: #667eea;
+}
+
+/* Highlight selected options in multi-select */
+.form-select option:checked {
+    background-color: #667eea !important;
+    color: white !important;
+}
+
+.form-select option {
+    background-color: #2a2a2a;
+    color: #e0e0e0;
+}
+
+.form-select option:hover {
+    background-color: #3a3a3a;
+}
+
+/* For multi-select, highlight selected items */
+.form-select[multiple] option:checked {
+    background: #667eea linear-gradient(0deg, #667eea 0%, #667eea 100%);
+    color: white;
+    font-weight: bold;
+}
+
+/* Additional styling for better visibility of selected states on map */
+.state-boundary.selected-state {
+    fill: #667eea !important;
+    stroke: #fff !important;
+    stroke-width: 3 !important;
+    opacity: 1 !important;
+    filter: drop-shadow(0 0 5px rgba(102, 126, 234, 0.8));
+}
+
+.form-label {
+    color: #e0e0e0;
+}
+
+.text-muted {
+    color: #999 !important;
+}
+
+.btn {
+    font-weight: 500;
+    border-radius: 5px;
+    transition: all 0.2s;
+}
+
+.btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+#app {
+    min-height: 100vh;
+}
+
+.loading {
+    text-align: center;
+    padding: 2rem;
+}
+
+.error {
+    color: #dc3545;
+    padding: 1rem;
+    background-color: #f8d7da;
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+    border-left: 4px solid #dc3545;
+}
+
+/* Chart styles */
+#timeline-chart, #scatter-chart, #state-chart, 
+#parallel-chart, #radar-chart, #treemap-chart, 
+#boxplot-chart, #correlation-chart, #us-map-chart,
+#crime-breakdown-chart {
+    min-height: 450px;
+    background-color: #0f0f0f;
+    border-radius: 8px;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    position: relative;
+    border: 1px solid #2a2a2a;
+    overflow: visible;
+}
+
+#timeline-chart svg, #scatter-chart svg, #state-chart svg,
+#parallel-chart svg, #radar-chart svg, #treemap-chart svg,
+#boxplot-chart svg, #correlation-chart svg, #crime-breakdown-chart svg {
+    width: 100% !important;
+    height: 100% !important;
+    display: block;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+/* Ensure charts are properly centered */
+.card-body.d-flex {
+    min-height: 450px;
+}
+
+/* Better chart container alignment */
+.chart-card .card-body {
+    overflow: visible;
+}
+
+/* Improve tooltip styling */
+.tooltip {
+    pointer-events: none;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+}
+
+/* State chart metric buttons */
+.state-metric-btn, .scatter-metric-btn, .timeline-metric-btn {
+    font-size: 0.75rem;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    transition: all 0.2s;
+    white-space: nowrap;
+}
+
+.state-metric-btn:hover, .scatter-metric-btn:hover, .timeline-metric-btn:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-1px);
+}
+
+.state-metric-btn.active, .scatter-metric-btn.active, .timeline-metric-btn.active {
+    background-color: #667eea;
+    border-color: #667eea;
+    color: white;
+    font-weight: 600;
+}
+
+.state-metric-btn.active:hover, .scatter-metric-btn.active:hover, .timeline-metric-btn.active:hover {
+    background-color: #5568d3;
+    border-color: #5568d3;
+}
+
+/* Responsive button layout */
+@media (max-width: 768px) {
+    .state-metric-btn, .scatter-metric-btn, .timeline-metric-btn {
+        font-size: 0.7rem;
+        padding: 0.2rem 0.4rem;
+    }
+}
+
+/* Section headers */
+h4.text-white {
+    border-bottom: 2px solid #667eea;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+#us-map-chart svg {
+    display: block;
+    margin: 0 auto;
+}
+
+/* Map styles */
+.state-boundary {
+    fill: #2a2a2a;
+    stroke: #444;
+    stroke-width: 1;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.state-boundary:hover {
+    fill: #3a3a3a;
+    stroke: #667eea;
+    stroke-width: 2;
+}
+
+.state-boundary.selected {
+    fill: #667eea;
+    stroke: #fff;
+    stroke-width: 2;
+}
+
+.county-boundary {
+    fill: #1a1a1a;
+    stroke: #333;
+    stroke-width: 0.5;
+    cursor: pointer;
+}
+
+.county-boundary:hover {
+    fill: #2a2a2a;
+    stroke: #667eea;
+}
+
+.county-boundary.selected {
+    fill: #764ba2;
+    stroke: #fff;
+    stroke-width: 1.5;
+}
+
+/* Ensure text is visible on black background */
+.text-muted {
+    color: #999 !important;
+}
+
+.form-label {
+    color: #e0e0e0 !important;
+}
+
+small.text-muted {
+    color: #999 !important;
+}
+
+.stat-card {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    padding: 1.5rem;
+    border-radius: 10px;
+    text-align: center;
+    color: white;
+    transition: transform 0.2s;
+}
+
+.stat-card:hover {
+    transform: scale(1.05);
+}
+
+.stat-card h6 {
+    color: rgba(255,255,255,0.9);
+    font-size: 0.875rem;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.stat-card h3 {
+    color: white;
+    margin: 0;
+    font-weight: bold;
+    font-size: 2rem;
+}
+
+/* Tooltip styles */
+.tooltip {
+    pointer-events: none;
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+}
+
+/* Form range styling */
+.form-range {
+    cursor: pointer;
+}
+
+.form-range::-webkit-slider-thumb {
+    background: #667eea;
+}
+
+.form-range::-moz-range-thumb {
+    background: #667eea;
+}
+
+/* Spinner */
+.spinner-border-sm {
+    width: 1rem;
+    height: 1rem;
+}
+
+/* Form controls for dark theme */
+.form-check-input {
+    cursor: pointer;
+    background-color: #2a2a2a;
+    border-color: #555;
+}
+
+.form-check-input:checked {
+    background-color: #667eea;
+    border-color: #667eea;
+}
+
+.form-check-label {
+    color: #e0e0e0;
+}
+
+/* Alert styles for dark theme */
+.alert {
+    border-radius: 0.5rem;
+    background-color: #1a1a1a;
+    border-color: #333;
+    color: #e0e0e0;
+}
+
+.alert-danger {
+    background-color: #2a1a1a;
+    border-color: #dc3545;
+    color: #f8d7da;
+}
+
+.alert-info {
+    background-color: #1a1a2a;
+    border-color: #0dcaf0;
+    color: #d1ecf1;
+}
+
+/* Form check for dark theme */
+.form-check-input {
+    cursor: pointer;
+    background-color: #2a2a2a;
+    border-color: #555;
+}
+
+.form-check-input:checked {
+    background-color: #667eea;
+    border-color: #667eea;
+}
+
+.form-check-label {
+    color: #e0e0e0;
+}
+
+/* Alert styles for dark theme */
+.alert {
+    border-radius: 0.5rem;
+    background-color: #1a1a1a;
+    border-color: #333;
+    color: #e0e0e0;
+}
+
+.alert-danger {
+    background-color: #2a1a1a;
+    border-color: #dc3545;
+    color: #f8d7da;
+}
+
+.alert-info {
+    background-color: #1a1a2a;
+    border-color: #0dcaf0;
+    color: #d1ecf1;
+}
+
+/* Optgroup styling for metric selector */
+optgroup {
+    font-weight: bold;
+    color: #e0e0e0;
+    background-color: #2a2a2a;
+}
+
+optgroup option {
+    background-color: #1a1a1a;
+    color: #e0e0e0;
+    padding: 5px;
+}
+
+/* Enhanced Form Controls */
+.form-select-sm {
+    font-size: 0.875rem;
+}
+
+.form-range {
+    cursor: pointer;
+}
+
+.form-range::-webkit-slider-thumb {
+    background: #667eea;
+    border: 2px solid #fff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.form-range::-moz-range-thumb {
+    background: #667eea;
+    border: 2px solid #fff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+/* Badge Enhancements */
+.badge {
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+/* Alert Enhancements */
+.alert {
+    border-left: 4px solid;
+    animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Loading States */
+.spinner-border-sm {
+    width: 1rem;
+    height: 1rem;
+    border-width: 0.15em;
+}
+
+/* Icon Enhancements */
+.bi {
+    vertical-align: -0.125em;
+}
+
+/* Smooth Transitions */
+* {
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+/* Enhanced Button Styles */
+.btn {
+    font-weight: 500;
+    letter-spacing: 0.3px;
+    transition: all 0.2s ease;
+}
+
+.btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.btn:active {
+    transform: translateY(0);
+}
+
+/* Enhanced Card Styles */
+.card {
+    overflow: hidden;
+}
+
+.card-body {
+    position: relative;
+}
+
+/* Text Utilities */
+.text-white-50 {
+    opacity: 0.75;
+}
+
+.opacity-75 {
+    opacity: 0.75 !important;
+}
+
+/* Enhanced Metric Cards - Compact Size */
+.metric-card {
+    border-radius: 10px !important;
+    overflow: hidden;
+    position: relative;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.metric-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.metric-card:hover::before {
+    opacity: 1;
+}
+
+.metric-card:hover {
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.4) !important;
+}
+
+.metric-icon {
+    position: relative;
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.metric-card:hover .metric-icon {
+    transform: scale(1.1) rotate(5deg);
+}
+
+.metric-card .card-body {
+    position: relative;
+    z-index: 1;
+}
+
+.metric-card h2 {
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+    transition: transform 0.3s ease;
+}
+
+.metric-card:hover h2 {
+    transform: scale(1.05);
+}
+
+.metric-card small {
+    opacity: 0.9;
+    font-weight: 500;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .card {
+        margin-bottom: 1rem;
+    }
+    
+    .stat-card h3 {
+        font-size: 1.5rem;
+    }
+    
+    .navbar-brand {
+        font-size: 1rem;
+    }
+    
+    .card-header h5 {
+        font-size: 1rem;
+    }
+    
+    .col-md-2, .col-md-3 {
+        margin-bottom: 1rem;
+    }
+    
+    .metric-card h2 {
+        font-size: 2rem !important;
+    }
+    
+    .metric-card .metric-icon i {
+        font-size: 2.5rem !important;
+    }
+}
+
