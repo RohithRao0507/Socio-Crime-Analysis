@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from app.api.routes import data, filter, aggregate, statistics, export
+from app.api.routes import data, filter, aggregate, statistics
 from app.config import settings
 
 app = FastAPI(
@@ -26,7 +26,6 @@ app.include_router(data.router, prefix="/api/data", tags=["data"])
 app.include_router(filter.router, prefix="/api/filter", tags=["filter"])
 app.include_router(aggregate.router, prefix="/api/aggregate", tags=["aggregate"])
 app.include_router(statistics.router, prefix="/api/stats", tags=["statistics"])
-app.include_router(export.router, prefix="/api/export", tags=["export"])
 
 @app.get("/")
 async def root():
